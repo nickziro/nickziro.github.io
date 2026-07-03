@@ -7,23 +7,26 @@ if (document.getElementById) {
                                           // enclosed in double quotes
 function openClose(theID) {
  for(var i=0; i < divNum.length; i++) {
+  var el = document.getElementById(divNum[i]);
+  if (!el) continue;  // skip IDs that don't exist on this page
   if (divNum[i] == theID) {
-   if (document.getElementById(divNum[i]).style.display == "block") { document.getElementById(divNum[i]).style.display = "none" }
-   else { document.getElementById(divNum[i]).style.display = "block" }
+   el.style.display = (el.style.display == "block") ? "none" : "block";
   }
-  else { document.getElementById(divNum[i]).style.display = "none"; }
+  else { el.style.display = "none"; }
  }
 }
 
 function openAll() {
  for(var i=0; i < divNum.length; i++) {
-   document.getElementById(divNum[i]).style.display = "block";
+   var el = document.getElementById(divNum[i]);
+   if (el) el.style.display = "block";
  }
 }
 
 function closeAll() {
  for(var i=0; i < divNum.length; i++) {
-   document.getElementById(divNum[i]).style.display = "none";
+   var el = document.getElementById(divNum[i]);
+   if (el) el.style.display = "none";
  }
 }
 /*************************************************
