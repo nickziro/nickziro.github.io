@@ -16,6 +16,15 @@ function openClose(theID) {
  }
 }
 
+// Show/hide the abstract panel that belongs to a clicked "Abstract" ribbon.
+function toggleAbstract(ribbon) {
+ var panel = document.getElementById(ribbon.getAttribute("aria-controls"));
+ if (!panel) return;
+ var isOpen = panel.classList.toggle("open");
+ ribbon.classList.toggle("open", isOpen);
+ ribbon.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
+
 function openAll() {
  for(var i=0; i < divNum.length; i++) {
    var el = document.getElementById(divNum[i]);

@@ -346,6 +346,58 @@ ul {
     margin: 0em 0em 0em;
 }
 
+/* Clickable "Abstract" ribbon under a paper, and the panel it reveals */
+.abstract-ribbon {
+    display: block;
+    width: 100%;
+    margin: .5em 0 0;
+    padding: .35em .75em;
+    border: 0;
+    border-left: 4px solid #0047AB;
+    border-radius: 0 3px 3px 0;
+    background: #e9eff8;
+    color: #0047AB;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.abstract-ribbon:hover,
+.abstract-ribbon:focus {
+    background: #d9e4f5;
+}
+
+.abstract-ribbon-arrow {
+    display: inline-block;
+    margin-right: .35em;
+    transition: transform .15s ease;
+}
+
+.abstract-ribbon.open .abstract-ribbon-arrow {
+    transform: rotate(90deg);
+}
+
+.abstract-panel {
+    display: none;
+    margin: 0 0 .5em;
+    padding: .75em 1em;
+    border-left: 4px solid #0047AB;
+    background: #f6f8fc;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.55;
+    text-align: justify;
+}
+
+.abstract-panel.open {
+    display: block;
+}
+
+@media print {
+    .abstract-panel { display: block; }
+}
+
 .blog_cv {
     font-family: "Ubuntu Mono";
     font-size: 17px;
